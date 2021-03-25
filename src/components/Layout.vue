@@ -1,13 +1,13 @@
 <template>
   <body class="dark-vertion black-bg">
-  <!-- Start Loader -->
-  <div class="section-loader">
-    <div class="loader">
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <!-- End Loader -->
+<!--  &lt;!&ndash; Start Loader &ndash;&gt;-->
+<!--  <div class="section-loader">-->
+<!--    <div class="loader">-->
+<!--      <div></div>-->
+<!--      <div></div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; End Loader &ndash;&gt;-->
 
   <!--
   ===================
@@ -19,10 +19,10 @@
     <div class="container">
       <div class="row">
         <nav class="navbar navbar-expand-lg mh-nav nav-btn">
-          <a class="navbar-brand" href="#">
-            <img src="../assets/images/fedalon_logo.png" alt="" class="img-fluid">
-            <!-- <h2>Maha</h2> -->
-          </a>
+<!--          <a class="navbar-brand" href="#">-->
+<!--            <img src="../assets/images/fedalon_logo.png" alt="" class="img-fluid">-->
+<!--            &lt;!&ndash; <h2>Maha</h2> &ndash;&gt;-->
+<!--          </a>-->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-targe="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon icon"></span>
@@ -34,25 +34,44 @@
                 <a class="nav-link" href="#mh-home">{{ $t("nav.home") }}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#mh-about">About</a>
+                <a class="nav-link" href="#mh-about">{{ $t("nav.about") }}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#mh-skills">Skills</a>
+                <a class="nav-link" href="#mh-skills">{{ $t("nav.skills") }}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#mh-experience">Experiences</a>
+                <a class="nav-link" href="#mh-experience">{{ $t("nav.experiences") }}</a>
               </li>
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#mh-portfolio">{{ $t("nav.portfolio") }}</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#mh-pricing">{{ $t("nav.pricing") }}</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#mh-blog">{{ $t("nav.blog") }}</a>-->
+<!--              </li>-->
               <li class="nav-item">
-                <a class="nav-link" href="#mh-portfolio">Portfolio</a>
+                <a class="nav-link" href="#mh-contact">{{ $t("nav.contact") }}</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mh-pricing">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mh-blog">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mh-contact">Contact</a>
+              <li class="nav-item dropdown">
+                <a
+                    id="navbarDropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-toggle="dropdown"
+                    class="nav-link dropdown-toggle">
+                  <flag :iso="currentLocale()" v-bind:squared="false"/>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dark-bg" aria-labelledby="navbarDropdown">
+                  <a
+                      class="dropdown-item"
+                      v-for="entry in languages"
+                      :key="entry.title"
+                      @click="changeLocale(entry.language)">
+                    <flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -73,34 +92,34 @@
           <div class="col-sm-6">
             <div class="mh-header-info">
               <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                <span>Hello I'm</span>
+                <span>Tôi là</span>
               </div>
 
-              <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Alex Johnson</h2>
-              <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Product Designer</h4>
+              <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Nguyễn Khắc Hoàn</h2>
+              <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Software Engineer</h4>
 
               <ul>
                 <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a
-                    href="mailto:">getemail@email.com</a></li>
+                    href="mailto:">hoanuchiha98@email.com</a></li>
                 <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a
-                    href="callto:">+12 986 987 7867</a></li>
+                    href="callto:">+84 339 407 755</a></li>
                 <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-map-marker"></i>
-                  <address>37, Pollsatnd, New York, United State</address>
+                  <address>79, Dương Quảng Hàm, Quan Hoa, Cầu Giấy, Hà Nội</address>
                 </li>
               </ul>
 
               <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="https://www.facebook.com/hoannguyennn110/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/hoanuchiha98" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
               </ul>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
               <div class="img-border">
-                <img src="../assets/images/hero.png" alt="" class="img-fluid">
+                <img src="../assets/images/avatar.png" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -124,23 +143,20 @@
         </div>
         <div class="col-sm-12 col-md-6">
           <div class="mh-about-inner">
-            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
-            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Hello, I’m a Patrick, web-developer
-              based on Paris.
-              I have rich experience in web site design & building
-              and customization. Also I am good at</p>
+            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">{{ $t("about.title") }}</h2>
+            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{ $t("about.description") }}</p>
             <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
               <ul>
-                <li><span>php</span></li>
-                <li><span>html</span></li>
-                <li><span>css</span></li>
-                <li><span>php</span></li>
-                <li><span>wordpress</span></li>
-                <li><span>React</span></li>
+                <li><span>python</span></li>
+                <li><span>c#</span></li>
+                <li><span>java</span></li>
+                <li><span>c++</span></li>
+<!--                <li><span>wordpress</span></li>-->
+                <li><span>Vuejs</span></li>
                 <li><span>Javascript</span></li>
               </ul>
             </div>
-            <a href="#" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Downlaod CV <i
+            <a href="#" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ $t("about.download_cv") }}<i
                 class="fa fa-download"></i></a>
           </div>
         </div>
@@ -952,11 +968,38 @@
 </template>
 
 <script>
+import i18n from '@/plugins/i18n'
 export default {
-  name: "Layout"
+  name: "Layout",
+  data() {
+    return {
+      languages: [
+        { flag: 'vn', language: 'vi', title: 'Tiếng Việt' },
+        { flag: 'us', language: 'en', title: 'English' }
+      ]
+    };
+  },
+  methods: {
+    changeLocale(locale) {
+      i18n.locale = locale;
+    },
+    currentLocale(){
+      const locale = this.$i18n.locale;
+      let flag = 'vn';
+      this.languages.forEach(function (value){
+        if (value.language == locale) flag = value.flag;
+      })
+      return flag;
+    }
+  }
 }
 </script>
 
 <style scoped>
-
+button {
+  padding: 15px;
+  border: 1px solid green;
+  font-size: 18px;
+  margin: 15px;
+}
 </style>

@@ -17,6 +17,18 @@
     }
   },
   "nav": {
-    "home": "Home"
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experiences": "Kinh nghiệm",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Xin chào, Tôi là Hoàn, lập trình viên web tại Việt Nam.",
+    "download_cv": "Download CV"
+  },
+  "what_i_do": {
+    "title": "What I do"
   }
 }

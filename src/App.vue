@@ -1,14 +1,16 @@
 <template>
   <Layout id="app">
+<!--    <Layout></Layout>-->
+
 <!--    <img alt="Vue logo" src="./assets/logo.png">-->
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </Layout>
 </template>
 
 <script>
-import Layout from "@/components/Layout"
+import Layout from './components/Layout.vue'
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     Layout
   }
@@ -27,6 +29,6 @@ export default {
 @import "demo/demo.css";
 @import "assets/css/styles.css";
 @import "assets/css/responsive.css";
-/*@import "assets/css/colors/purple.css";*/
+@import "assets/css/colors/purple.css";
 @import "assets/css/colors/orange.css";
 </style>

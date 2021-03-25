@@ -1,20 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueI18n from 'vue-i18n';
-import vnMessage from './locales/vn.json'
-import enMessage from './locales/en.json'
+import i18n from '@/plugins/i18n'
+import FlagIcon from 'vue-flag-icon'
 
-Vue.use(VueI18n)
+Vue.use(FlagIcon)
 
-const messages = {
-  vn: vnMessage,
-  en: enMessage
-}
-const i18n = new VueI18n({
-  locale: 'vn',
-  messages,
-  fallbackLocale: 'vn'
-})
 Vue.config.productionTip = false
 new Vue({
   i18n,
